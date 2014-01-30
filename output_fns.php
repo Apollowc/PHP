@@ -45,7 +45,7 @@
 	<html>
 	<body>
 		Members Login here: <br>
-		<form action="register.php" method="post">
+		<form action="valid_user.php" method="post">
 			Username: <input type="text" name="username" ><br>
 			Password: <input type="password" name="password" value="" /><br>
 			<input type="submit" value="Login"/><br>
@@ -63,7 +63,7 @@
 
 	<html>
 	<body>
-		Members Login here: <br>
+		Register here: <br>
 		<form action="register_new.php" method="post">
 			Email address: <input type="text" name="email" "><br>
 			Preferred username: <input type="text" name="username" ><br>
