@@ -25,7 +25,7 @@
 		
 		register($username,$email,$passwd1);
 		
-		do_html_url("member.php", "Go to member page!");
+		do_html_url("login_form.php", "Go to member page!");
 		
 		
 	}

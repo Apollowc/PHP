@@ -1,6 +1,9 @@
 <?php
 
 require_once 'db.php';
+
+//register fail, throw Exception
+//register successfully, return true;
 function register($username,$email,$password){
 	$connect=db_connect();
 	
@@ -22,6 +25,9 @@ function register($username,$email,$password){
 	return true;
 }
 
+
+//cannot login throw Exception
+//login in valid user, return true
 function login($username,$password){
 	$connect=db_connect();
 	

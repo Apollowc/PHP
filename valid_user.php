@@ -1,9 +1,11 @@
 <?php
 
-	require_once 'bookmark_fns.php';
+	require_once 'include.php';
 	
 	$username=$_POST["username"];
 	$passwd=$_POST["password"];
+	
+	session_start();
 	try{
 	
 	
@@ -17,7 +19,12 @@
 	
 	login($username,$passwd);
 	
+	//record the member name
+	$_SESSION['member']=$username;
 	do_html_header("Welcome, ".$username);
+	
+	display_member_init();
+	
 	}catch(Exception $e){
 		do_html_header('Problem');
 		echo $e->getMessage();
