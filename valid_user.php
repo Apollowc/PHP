@@ -19,8 +19,8 @@
 	
 	login($username,$passwd);
 	
-	//record the member name
-	$_SESSION['member']=$username;
+	//record the valid customer id
+	$_SESSION['cid']=1;
 	do_html_header("Welcome, ".$username);
 	
 	display_member_init();
