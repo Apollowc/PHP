@@ -6,7 +6,7 @@ function do_html_header($title){
 <title><?php echo $title?>
 </title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 <meta name="Keywords">
 <meta name="Description">
 <meta name="author" content="王大锤">
@@ -74,16 +74,6 @@ function display_registeration_form(){
 <!-- display member init login page -->
 <?php 
 function display_member_init(){
-	$connect=db_connect1();
-	//select * from customers where customerid ='1';
-	$query="SELECT * FROM  customers  WHERE customerid ='".$_SESSION['cid']."'";
-	$result=mysqli_query($connect,$query);
-
-	if(!$result){
-		throw new Exception("Could not excute query!");
-	};
-	$row=mysqli_fetch_row($result);
-	$_SESSION['email']=$row[1];
 
 	$title="会员服务系统";
 	do_html_header($title);
@@ -97,7 +87,6 @@ function display_member_init(){
 
 <?php function display_comman_header($form){
 
-	//session_start();
 	?>
 <body topmargin="0" leftmargin="0">
 	<form name="form1" method="post" action=<?php echo $form?> id="form1">
@@ -141,7 +130,7 @@ function display_member_init(){
 																	<tr>
 																		<td height="45" width="100%" class="da" align="center"
 																			style="text-indent: 25px;"><span
-																			id="Us_Left_User_NameStr"><?php echo $_SESSION['email']?>
+																			id="Us_Left_User_NameStr"><?php echo $_SESSION['chinesename']?>
 																				您好！</span>
 																		</td>
 																	</tr>
@@ -508,7 +497,7 @@ function display_member_init(){
 													</tr>
 													<tr>
 														<td width="10"></td>
-														<td align="left" width="100"><a href="/index.html"
+														<td align="left" width="100"><a href="index.html"
 															class="title22_wenzi" target="_blank">首 页</a>
 														</td>
 														<td width="10"></td>

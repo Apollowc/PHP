@@ -1,6 +1,7 @@
 <?php
 require_once 'include.php';
 try{
+session_start();
 display_package_record();
 }
 catch(Exception $e){

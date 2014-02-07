@@ -4,18 +4,15 @@ use expressmail;
 
 create table customers
 (
-	cid int unsigned not null auto_increment primary key,
+	cid int unsigned not null auto_increment,
 	email varchar(100) not null,
-	pwssword char(40) not null,
+	password char(40) not null,
 	firstname varchar(30) not null,
 	lastname varchar(30) not null,
 	chinesename varchar(30) not null,
 	phonenumber int unsigned not null,
-	address char(80) not null,
-	city char(30) not null,
-	state char(20) not null,
-	zip char(10) not null,
-	country char(20) not null
+	location char(80),
+	primary key (cid)
 );
 
 create table accounts
@@ -106,4 +103,4 @@ create table admin
 );
 
 grant select, insert, update, delete on expressmail.*
-to em_user@localhost identified by 'passwd';
+to em_user@localhost identified by 'password';
