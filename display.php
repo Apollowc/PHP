@@ -6,7 +6,7 @@ function do_html_header($title){
 <title><?php echo $title?>
 </title>
 
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="Keywords">
 <meta name="Description">
 <meta name="author" content="王大锤">
