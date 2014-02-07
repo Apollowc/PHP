@@ -61,24 +61,28 @@ create table package
 (
 	packageid int unsigned not null auto_increment primary key,
 	customerid int unsigned not null references customers(customerid),
+	pack_date date not null,
 	storage char(50) not null,
 	dilivermethod char(50) not null,
 	tracknumber char(50) not null,
 	note varchar(250) not null,
+	pack_weight varchar(10) not null,
+	item1 char(50) not null,
+	item2 char(50) not null,
+	item3 char(50) not null,
+	item4 char(50) not null,
+	item5 char(50) not null,
 	packagestatus char(10) not null
 );
 
 create table orders
 (
-	trackingnumber varchar(100) not null primary key,
+	trackingnumber varchar(100) not null,
 	customerid int unsigned not null references customers(customerid),
 	packageid int unsigned not null,
 	orderstatus varchar(100) not null,
-	item1 char(50) not null,
-	item2 char(50) not null,
-	item3 char(50) not null,
-	item4 char(50) not null,
-	item5 char(50) not null
+	order_total int not null,
+	primary key(trackingnumber,packageid)
 );
 
 create table admin

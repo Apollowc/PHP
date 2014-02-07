@@ -18,7 +18,6 @@ function do_html_header($title){
 
 <?php
 function do_html_url($url,$title) {
-
 	?>
 <a href="<?php echo $url?>"><?php echo $title?> </a>
 <?php 
@@ -1137,7 +1136,7 @@ function display_package_record(){
 									</td>
 								</tr>
 
-
+								
 
 								<tr height="30">
 									<td class="hei">包裹重量：</td>
@@ -1146,32 +1145,14 @@ function display_package_record(){
 										class="pic_border"
 										onkeyup="if(isNaN(value))execCommand('undo')"
 										onafterpaste="if(isNaN(value))execCommand('undo')">
-										磅&nbsp;&nbsp;此项可保持默认</td>
+										磅&nbsp;&nbsp;此项可保持默认&nbsp;</td>
+			
 								</tr>
+								
+								
+								
+								
 
-								<tr height="30" style="display: none">
-									<td class="hei">是否真实入库：</td>
-									<td><input type="radio" name="pk_iscome_sel" value="1"
-										disabled=""
-										onclick="window.document.all.pk_iscome.value=this.value;selcometime();">是&nbsp;&nbsp;<input
-										type="radio" name="pk_iscome_sel" value="0" disabled=""
-										checked=""
-										onclick="window.document.all.pk_iscome.value=this.value;selcometime();">否&nbsp;&nbsp;&nbsp;&nbsp;<input
-										name="pk_iscome" type="hidden" id="pk_iscome" value="0">&nbsp;此项可保持默认</td>
-								</tr>
-
-								<tr height="30" id="tr_cometime" style="display: none">
-									<td class="hei">入库日期：</td>
-									<td><input name="pk_cometime" type="text" id="pk_cometime"
-										class="pic_border"
-										onclick="SelectDate(document.getElementById('pk_cometime'),'yyyy-MM-dd',0,0)"
-										readonly="" maxlength="10" value="2014/2/5"> <img
-										style="MARGIN: 1px; CURSOR: hand"
-										onclick="SelectDate(document.getElementById('pk_cometime'),'yyyy-MM-dd',0,0)"
-										height="15" src="image/calendar.gif" width="16"> &nbsp;<font
-										color="red">无法预计可保持默认</font>
-									</td>
-								</tr>
 
 								<script>
                                                         function selcometime()
@@ -1202,7 +1183,19 @@ function display_package_record(){
                                                         
                                                     </script>
 
-
+																<tr height="30" width="1200">
+								
+								<table  border="1" cellspacing="10" cellpadding="0" align="left">
+								<tbody>
+								<tr >
+									<td >运单物品名称</td>
+									<td>数量</td>
+									<td>总价</td>
+								</tr>
+								</tbody>
+								</table>
+								
+								</tr>
 								<tr height="30">
 									<td class="hei" valign="middle">我的包裹备注：</td>
 									<td><textarea name="pk_remark_user" id="pk_remark_user"
