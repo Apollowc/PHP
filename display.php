@@ -179,7 +179,7 @@ function display_member_init(){
 																	<tr>
 																		<td width="45"></td>
 																		<td height="28" class="hei"><div align="left">
-																				<a href="package_record.php" class="MainLeft">自助录入包裹</a>
+																				<a href="pack_record_form.php" class="MainLeft">自助录入包裹</a>
 																			</div>
 																		</td>
 																	</tr>
@@ -1024,7 +1024,7 @@ function display_package_record(){
 <!-- display 自助录入包裹页面 -->
 
 <?php function display_package_heading(){
-	$form="package2warehouse.php";
+	$form="pack2store.php";
 	display_comman_header($form);
 	?>
 <?php }?>
