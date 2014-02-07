@@ -96,7 +96,7 @@ function display_member_init(){
 ?>
 
 <?php function display_comman_header($form){
-	
+
 	//session_start();
 	?>
 <body topmargin="0" leftmargin="0">
@@ -1136,7 +1136,7 @@ function display_package_record(){
 									</td>
 								</tr>
 
-								
+
 
 								<tr height="30">
 									<td class="hei">包裹重量：</td>
@@ -1146,12 +1146,12 @@ function display_package_record(){
 										onkeyup="if(isNaN(value))execCommand('undo')"
 										onafterpaste="if(isNaN(value))execCommand('undo')">
 										磅&nbsp;&nbsp;此项可保持默认&nbsp;</td>
-			
+
 								</tr>
-								
-								
-								
-								
+
+
+
+
 
 
 								<script>
@@ -1183,19 +1183,79 @@ function display_package_record(){
                                                         
                                                     </script>
 
-																<tr height="30" width="1200">
-								
-								<table  border="1" cellspacing="10" cellpadding="0" align="left">
-								<tbody>
-								<tr >
-									<td >运单物品名称</td>
-									<td>数量</td>
-									<td>总价</td>
+								<tr>
+									<td>
+										货物申报：
+									</td>
+									<td width="200" colspan="3">
+										<table border="1" cellspacing="10" cellpadding="0"
+											align="left">
+											<tbody>
+												<tr>
+													<td>物品名称</td>
+													<td>数量</td>
+													<td>总价</td>
+												</tr>
+												<tr>
+												<td><input name="item1_name" type="text" id="pk_item1"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item1_num" type="text" id="pk_item1"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item1_price" type="text" id="pk_item1"
+													maxlength="50" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												</tr>
+																								<tr>
+												<td><input name="item2_name" type="text" id="pk_item2_name"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item2_num" type="text" id="pk_item2_num"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item2_price" type="text" id="pk_item2_price"
+													maxlength="50" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												</tr>
+																								<tr>
+												<td><input name="item3_name" type="text" id="pk_item3_name"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item3_num" type="text" id="pk_item3_num"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item3_price" type="text" id="pk_item3_price"
+													maxlength="50" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												</tr>
+																								<tr>
+												<td><input name="item4_name" type="text" id="pk_item4_name"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item4_num" type="text" id="pk_item4_num"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item4_price" type="text" id="pk_item4_price"
+													maxlength="50" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												</tr>
+																								<tr>
+												<td><input name="item5_name" type="text" id="pk_item5_name"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item5_num" type="text" id="pk_item5_num"
+													maxlength="200" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												<td><input name="item5_price" type="text" id="pk_item5_price"
+													maxlength="50" tabindex="2" size="20" border="0"
+													class="pic_border"></td>
+												</tr>
+											</tbody>
+										</table>
+									</td>
 								</tr>
-								</tbody>
-								</table>
-								
-								</tr>
+								<tr height="10"></tr>
 								<tr height="30">
 									<td class="hei" valign="middle">我的包裹备注：</td>
 									<td><textarea name="pk_remark_user" id="pk_remark_user"
