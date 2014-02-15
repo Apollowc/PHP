@@ -60,7 +60,7 @@ create table package
 	cid int unsigned not null references customers(cid),
 	pack_date date not null,
 	storage char(50) not null,
-	dilivermethod char(50) not null,
+	delivermethod char(50) not null,
 	tracknumber char(50) not null,
 	note varchar(250) not null,
 	pack_weight varchar(10) not null,
