@@ -11,7 +11,11 @@ try{
 	exit();
 }
 ?>
-
+<?php 
+function db_sender(){
+	
+}
+?>
 
 <!-- display order form -->
 <?php function display_order_form(){
@@ -74,10 +78,11 @@ function display_order_body($pack){
 <SCRIPT
 	type=text/javascript src="javascript/order.js"></SCRIPT>
 <tr>
-	<td  style="dispaly: none">
-	<input name="user_info" type="hidden" id="user_firstname" value=<?php echo $_SESSION['firstname']?>>
-	<input name="user_info" type="hidden" id="user_lastname" value=<?php echo $_SESSION['lastname']?>>
-	<input name="user_info" type="hidden" id="phone" value=<?php echo $_SESSION['phone']?>>
+	<td style="dispaly: none"><input name="user_info" type="hidden"
+		id="user_firstname" value=<?php echo $_SESSION['firstname']?>> <input
+		name="user_info" type="hidden" id="user_lastname"
+		value=<?php echo $_SESSION['lastname']?>> <input name="user_info"
+		type="hidden" id="phone" value=<?php echo $_SESSION['phone']?>>
 	</td>
 </tr>
 <tr>
@@ -234,10 +239,12 @@ function display_order_body($pack){
 																							<tbody>
 																								<tr>
 																									<td width="90"><img src="images/0.jpg"></td>
-																									<td width="305" align="left" height="34"><input
+																									<td width="305" align="left" height="34">
+																									<a href="db_sender.php" name="sender_address_0">保存发件人</a>
+																									<input
 																										class="input_button" type="button"
-																										name="bt_sendaddress_0" value="新建发件人"
-																										onclick="input_SendAddress('0')"> <input
+																										name="bt_sendaddress_0" value="保存发件人"
+																										onclick=<?php db_sender();?>> <input
 																										class="input_button" type="button"
 																										name="bt_sendaddress_sel_0" value="选择发件人"
 																										onclick="select_SendAddress('0');">
@@ -5724,23 +5731,7 @@ function setinsurance(tempbillnum)
 <script>
                                                                    
                                                                    
-                                                                   function input_SendAddress(tempbillnum) {
-                                                                   
-                                                                    var   sFeatures   = "dialogHeight:250px;dialogWidth:690px;dialogTop:10px;dialogLeft:10px;help:no;status:no;scroll:auto;resizable:yes;dialogHide:1 " ;
-                                                                    var returnsendaddress=window.showModalDialog( "Us_Alert.asp?isuser=1&url=Us_YundanSelSendAddressAdd&seluserno=02089&blno="+ document.getElementById("bl_no_"+tempbillnum).innerHTML +"&cursendaddressselid="+document.getElementById("yd_sendaddressID_"+tempbillnum).value, " ",sFeatures);
-                                                                    
-                                                                        if(returnsendaddress!=null)
-                                                                        {
-                                                                            
-                                                                            document.getElementById("sendaddress_name_"+tempbillnum).innerHTML=returnsendaddress[0];
-                                                                            document.getElementById("sendaddress_tel_"+tempbillnum).innerHTML=returnsendaddress[1];
-                                                                            document.getElementById("sendaddress_address_"+tempbillnum).innerHTML=returnsendaddress[2];
-                                                                            document.getElementById("sendaddress_code_"+tempbillnum).innerHTML=returnsendaddress[3];
-                                                                            
-                                                                            document.getElementById("yd_sendaddressID_"+tempbillnum).value=returnsendaddress[4];
-                                                                        }
-                                                                       
-                                                                    }
+
                                                                     
                                                                     function select_SendAddress(tempbillnum) {
 
