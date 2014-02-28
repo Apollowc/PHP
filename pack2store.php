@@ -1,5 +1,5 @@
 <?php
-require_once('include.php');
+require_once('valid_user.php');
 
 
 
@@ -21,7 +21,7 @@ try{
 	
 	
 	//检查是否是已存在美国单号
-	$query="SELECT cid from package where tracknumber=".$_POST['pk_expressno'];
+	$query="SELECT cid from package where tracknumber='".$_POST['pk_expressno']."'";
 	$result=mysqli_query($connect,$query);
 	if($result->num_rows>0){
 		do_html_header("已经存在的美国包裹号!");

@@ -11,11 +11,7 @@ try{
 	exit();
 }
 ?>
-<?php 
-function db_sender(){
-	
-}
-?>
+
 
 <!-- display order form -->
 <?php function display_order_form(){
@@ -239,19 +235,17 @@ function display_order_body($pack){
 																							<tbody>
 																								<tr>
 																									<td width="90"><img src="images/0.jpg"></td>
-																									<td width="305" align="left" height="34">
-																									<a href="db_sender.php" name="sender_address_0">保存发件人</a>
-																									<input
+																									<td width="305" align="left" height="34"><input
 																										class="input_button" type="button"
 																										name="bt_sendaddress_0" value="保存发件人"
-																										onclick=<?php db_sender();?>> <input
+																										onclick="input_SendAddress('0')"> <input
 																										class="input_button" type="button"
 																										name="bt_sendaddress_sel_0" value="选择发件人"
 																										onclick="select_SendAddress('0');">
 																									</td>
 																									<td width="*"><input class="input_button"
 																										type="button" name="bt_address_0"
-																										value="新建收货地址" onclick="input_Address('0');">
+																										value="保存收货地址" onclick="input_Address('0');">
 																										<input class="input_button" type="button"
 																										name="bt_address_sel_0" value="选择收货地址"
 																										onclick="select_Address_Idc('0');"> <input
@@ -5749,26 +5743,7 @@ function setinsurance(tempbillnum)
                                                                        
                                                                     }
                                                                     
-                                                                    function input_Address(tempbillnum) {
 
-                                                                    var   sFeatures   = "dialogHeight:300px;dialogWidth:700px;dialogTop:10px;dialogLeft:10px;help:no;status:no;scroll:auto;resizable:yes;dialogHide:1 " ;
-                                                                    var returnaddress=window.showModalDialog( "Us_Alert.asp?isuser=1&url=Us_YundanSelAddressAdd&seluserno=02089&blno="+ document.getElementById("bl_no_"+tempbillnum).innerHTML +"&curaddressselid="+document.getElementById("yd_addressID_"+tempbillnum).value, " ",sFeatures);
-                                                                    
-                                                                        if(returnaddress!=null)
-                                                                        {
-                                                                            document.getElementById("address_name_"+tempbillnum).innerHTML=returnaddress[0];
-                                                                            document.getElementById("address_province_"+tempbillnum).innerHTML=returnaddress[1];
-                                                                            document.getElementById("address_area_"+tempbillnum).innerHTML=returnaddress[2];
-                                                                            document.getElementById("address_tel_"+tempbillnum).innerHTML=returnaddress[3];
-                                                                            document.getElementById("address_tel2_"+tempbillnum).innerHTML=returnaddress[4];
-                                                                            document.getElementById("address_address_"+tempbillnum).innerHTML=returnaddress[5];
-                                                                            document.getElementById("address_code_"+tempbillnum).innerHTML=returnaddress[6];
-                                                                            
-                                                                            document.getElementById("yd_addressID_"+tempbillnum).value=returnaddress[7];
-                                                                        }
-                                                                       
-                                                                    }
-                                                                    
                                                                     function select_Address(tempbillnum) {
 
                                                                     var   sFeatures   = "dialogHeight:350px;dialogWidth:950px;dialogTop:10px;dialogLeft:10px;help:no;status:no;scroll:auto;resizable:yes;dialogHide:1 " ;
