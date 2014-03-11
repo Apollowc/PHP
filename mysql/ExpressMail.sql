@@ -58,6 +58,8 @@ create table package
 (
 	pack_id int unsigned not null auto_increment primary key,
 	cid int unsigned not null references customers(cid),
+	recipientid int unsigned not null references recipient(recipientid),
+	senderid int unsigned not null references sender(senderid),
 	pack_date date not null,
 	storage char(50) not null,
 	delivermethod char(50) not null,

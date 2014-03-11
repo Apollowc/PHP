@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>新建发件人</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Keywords">
+<meta name="Description">
+<meta name="author" content="王大锤">
+<link type="text/css" rel="stylesheet" href="./css/default.css"></link>
+</head>
+
+
+<body leftmargin="0" topmargin="0">
+	<form name="form1" method="post" action="sender_db_record.php"
+		id="form1" onsubmit="return checkForm()">
+		<div>
+			<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+				value="/wEPDwULLTE4Nzk4NDA0NTNkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYBBRN5ZF9zZW5kSURfaXNuZXdzYXZlzn1gEWOqbGC4p2x4vsve01KJZQk=">
+		</div>
+
+		<div>
+
+			<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+				value="/wEWDgKLv4imCQLIwLujBgK2lsvKDALqj+zaBgLCp88EAruGgZIOAp3QkYgIAsen6awFAunejtoMAvjZvc4JAqygg9MIApKintYOAqXtp7sMArvjuK8HPugleuL6resRcjsHxSYKEWwUeto=">
+		</div>
+		<div>
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tbody>
+					<tr>
+						<td width="100%" class="hei" align="left" valign="top">
+
+							<table width="100%" border="0" cellspacing="4" class="allborder"
+								cellpadding="0">
+								<tbody>
+									<tr>
+										<td width="115" align="right">名(First Name)：</td>
+										<td align="left"><input name="sd_firstname"
+											type="text" id="sd_firstname" class="pic_border"
+											maxlength="50" size="34" tabindex="3"
+											onblur="if(!/^([a-z]|[A-Z]){0,20}$/.test(this.value)){alert('请输入英文');this.focus();return false;}">&nbsp;<font
+											color="#ff0000">*</font></td>
+									</tr>
+									<tr>
+										<td align="right">姓(Last &nbsp;Name)：</td>
+										<td align="left"><input name="sd_lastname"
+											type="text" id="sd_lastname" class="pic_border"
+											maxlength="50" size="34" tabindex="4"
+											onblur="if(!/^([a-z]|[A-Z]){0,20}$/.test(this.value)){alert('请输入英文');this.focus();return false;}">&nbsp;<font
+											color="#ff0000">*</font></td>
+									</tr>
+									<tr>
+										<td align="right">电&nbsp;&nbsp;&nbsp;&nbsp;话：</td>
+										<td align="left"><input name="sd_tel"
+											type="text" id="sd_tel" class="pic_border"
+											maxlength="50" size="34" tabindex="5">&nbsp;<font
+											color="#ff0000">*</font></td>
+									</tr>
+									<tr>
+										<td align="right">发货地址：</td>
+										<td align="left"><input name="sd_address"
+											type="text" id="sd_address" class="pic_border"
+											maxlength="200" size="71" tabindex="6">&nbsp;<font
+											color="#ff0000">*</font></td>
+									</tr>
+									<tr>
+										<td align="right">邮政编码：</td>
+										<td align="left"><input name="sd_code"
+											type="text" id="sd_code" class="pic_border"
+											maxlength="20" size="34" tabindex="7">&nbsp;<font
+											color="#ff0000">*</font></td>
+									</tr>
+									<tr>
+										<td align="right">附加操作：</td>
+										<td align="left"><input name="sendID_isnewsave"
+											type="checkbox" id="sendID_isnewsave"
+											onclick="sendID_isnewsave_bt()">保存当前发件人到发件人地址簿 <input
+											name="sendID_isdefault" type="checkbox"
+											id="sendID_isdefault" disabled="disabled">设为默认发件人
+											<input name="seluser" type="hidden" id="seluser"
+											value="02089"> <input name="cursendaddressselid"
+											type="hidden" id="cursendaddressselid"> <input
+											name="blno" type="hidden" id="blno" value="锟斤拷锟斤拷锟斤拷">
+										</td>
+									</tr>
+
+									<script>
+										function sendID_isnewsave_bt() {
+											if (document
+													.getElementById('sendID_isnewsave').checked) {
+												document
+														.getElementById('sendID_isdefault').disabled = false;
+												document
+														.getElementById('sendID_sd_ordernum').disabled = false;
+											} else {
+												document
+														.getElementById('sendID_isdefault').disabled = true;
+												document
+														.getElementById('sendID_isdefault').checked = false;
+
+												document
+														.getElementById('sendID_sd_ordernum').disabled = true;
+												document
+														.getElementById('sendID_sd_ordernum').value = "1";
+											}
+										}
+									</script>
+
+									<script>
+										function returnVal() {
+											var ret = new Object();
+											ret.firstname = document
+													.getElementById("sd_firstname").value;
+											ret.lastname=document.getElementById("sd_lastname").value;
+											ret.tel=document.getElementById("sd_tel").value;
+											ret.add=document.getElementById("sd_address").value;
+											ret.code=document.getElementById("sd_code").value;
+											window.returnValue = ret;
+										}
+									</script>
+
+									<tr height="30">
+										<td></td>
+										<td><input type="submit" name="SendData" value="确 定"
+											id="SendData" tabindex="9" class="input_bot" 
+											onclick="returnVal()"> <input
+											name="isuser" type="hidden" id="isuser" value="1"></td>
+									</tr>
+
+								</tbody>
+							</table>
+
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+	</form>
+	<script language="javascript">
+		function checkForm() {
+			var form = document.form1;
+
+			if (!isText(form.sd_firstname.value)) {
+				form.sendID_sd_firstname.focus();
+				return false;
+			}
+
+			if (!isText(form.sd_lastname.value)) {
+				form.sendID_sd_lastname.focus();
+				return false;
+			}
+
+			if (!isText(form.sd_tel.value)) {
+				form.sendID_sd_tel.focus();
+				return false;
+			}
+
+			if (!isText(form.sd_address.value)) {
+				form.sendID_sd_address.focus();
+				return false;
+			}
+
+			if (!isText(form.sd_code.value)) {
+				form.sendID_sd_code.focus();
+				return false;
+			}
+
+			return true;
+		}
+	</script>
+</body>
+</html>

@@ -11,6 +11,7 @@ function do_html_header($title){
 <meta name="Description">
 <meta name="author" content="王大锤">
 <link type="text/css" rel="stylesheet" href="./css/default.css"></link>
+<script type="text/javascript" src="javascript/order.js"></script>
 </head>
 <?php 
 }
@@ -22,6 +23,7 @@ function do_html_header($title){
 
 	?>
 <body topmargin="0" leftmargin="0">
+
 	<form name="form1" method="post" action=<?php echo $form?> id="form1">
 		<div>
 			<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
