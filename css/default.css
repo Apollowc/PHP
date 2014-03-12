@@ -28,6 +28,10 @@ COLOR: #3ac3a7;
 text-decoration:none;
 }
 
+.list li{
+	width:300px;
+	float:left;
+}
 
 
 A.DefaultA:hover

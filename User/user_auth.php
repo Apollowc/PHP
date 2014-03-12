@@ -43,7 +43,6 @@ function login($email, $password) {
 	$passwd = $row['password'];
 	$_SESSION['firstname']=$row['firstname'];
 	$_SESSION['lastname']=$row['lastname'];
-	$_SESSION['phone']=$row['phonenumber'];
 	$_SESSION['cid'] = $row['cid'];
 	$_SESSION['email'] = $row['email'];
 	$_SESSION['chinesename'] = $row['chinesename'];

@@ -21,7 +21,7 @@ function display_member_init(){
 	$title="会员服务系统";
 	do_html_header($title);
 	if($title){
-	  	$form="Us_Index.aspx";
+	  	$form="";
 		display_comman_header($form);
 		display_member_body();
 	}
@@ -44,11 +44,11 @@ function display_member_init(){
 				<tr>
 					<td height="6"></td>
 				</tr>
-				<tr>
-					<td width="22" height="36">&nbsp;</td>
-					<td class="da" width="593" colspan="2"><img height="15"
-						src="image/tip_arrow3.jpg" width="15">&nbsp;&nbsp;会员专区</td>
-				</tr>
+<!-- 				<tr> -->
+<!-- 					<td width="22" height="36">&nbsp;</td> -->
+<!-- 					<td class="da" width="593" colspan="2"><img height="15" -->
+<!-- 						src="image/tip_arrow3.jpg" width="15">&nbsp;&nbsp;会员专区</td> -->
+<!-- 				</tr> -->
 				<tr>
 					<td width="20" height="30">&nbsp;</td>
 
@@ -132,7 +132,7 @@ function display_member_init(){
 
 									</span>
 									</td>
-									<td width="50%">消费总额：<font color="green"><b>0.00</b> </font>
+									<td width="50%" style="display: none">消费总额：<font color="green"><b>0.00</b> </font>
 										美元&nbsp;&nbsp;<img src="image/suggest_right.gif"><a
 										href="Us_Balance_Index.aspx">在线冲值</a>
 									</td>
@@ -190,8 +190,7 @@ function display_member_init(){
 				<tr>
 					<td width="10">&nbsp;</td>
 					<td width="100%" height="70" bgcolor="#f4f4f4" valign="middle">
-						<div align="center" class="hui">君安快递&nbsp;&nbsp; Copyright 2012
-							www.junanex.com, All Rights Reserved</div>
+						<div align="center" class="hui">王大锤快递&nbsp;&nbsp; Copyright 2014, All Rights Reserved</div>
 					</td>
 
 				</tr>

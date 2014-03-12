@@ -5336,8 +5336,7 @@ function display_order_body($pack){
 				<tr>
 					<td width="10">&nbsp;</td>
 					<td width="100%" height="70" bgcolor="#f4f4f4" valign="middle">
-						<div align="center" class="hui">君安快递&nbsp;&nbsp; Copyright 2012
-							www.junanex.com, All Rights Reserved</div>
+						<div align="center" class="hui">王大锤快递&nbsp;&nbsp; Copyright 2014 All Rights Reserved</div>
 					</td>
 
 				</tr>

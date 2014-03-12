@@ -58,6 +58,7 @@ create table package
 (
 	pack_id int unsigned not null auto_increment primary key,
 	cid int unsigned not null references customers(cid),
+	bus_number varchar(50) not null,
 	recipientid int unsigned not null references recipient(recipientid),
 	senderid int unsigned not null references sender(senderid),
 	pack_date date not null,
@@ -92,7 +93,7 @@ create table orders
 (
 	trackingnumber varchar(100) not null,
 	cid int unsigned not null references customers(cid),
-	pack_id int unsigned not null,
+	pack_id int unsigned not null references package(pack_id),
 	orderstatus varchar(100) not null,
 	order_total int not null,
 	primary key(trackingnumber,pack_id)

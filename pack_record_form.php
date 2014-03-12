@@ -58,26 +58,25 @@ function display_package_record(){
 						<table width="100%" border="0" cellspacing="0" cellpadding="0"
 							class="hei">
 							<tbody>
-								<tr height="30">
-									<td class="hei" height="30">仓库名称：</td>
-									<td><select name="pk_areaid_sel" id="pk_areaid_sel"
-										onchange="document.getElementById('pk_areaid').value=this.value;">
-											<option value="">请选择仓库</option>
-											<option value="1">君安仓库</option>
+<!-- 								<tr height="30"> -->
+<!-- 									<td class="hei" height="30">仓库名称：</td> -->
+<!-- 									<td><select name="pk_areaid_sel" id="pk_areaid_sel" -->
+<!-- 										onchange="document.getElementById('pk_areaid').value=this.value;"> -->
+<!-- 											<option value="">请选择仓库</option> -->
+<!-- 											<option value="1">君安仓库</option> -->
 
-											<option value="2">免税州DE</option>
+<!-- 											<option value="2">免税州DE</option> -->
 
-											<option value="3">免税州OR</option>
-									</select> <input name="pk_areaid" type="hidden" id="pk_areaid">
-									</td>
-								</tr>
-								<script>
+<!-- 											<option value="3">免税州OR</option> -->
+<!-- 									</select> <input name="pk_areaid" type="hidden" id="pk_areaid"> -->
+<!-- 									</td> -->
+<!-- 								</tr> -->
+ 								<script> 
                                                     if(document.getElementById("pk_areaid").value!="")
                                                     {
                                                         document.getElementById("pk_areaid_sel").value = document.getElementById("pk_areaid").value;
                                                     }
-                                                  
-                                                  </script>
+                                                 </script> 
 								<tr height="30">
 									<td class="hei" width="120" height="30">包裹送达方式：</td>
 									<td><select id="pk_expresssel" name="pk_expresssel"
@@ -288,8 +287,8 @@ function display_package_record(){
 				<tr>
 					<td width="10">&nbsp;</td>
 					<td width="100%" height="70" bgcolor="#f4f4f4" valign="middle">
-						<div align="center" class="hui">君安快递&nbsp;&nbsp; Copyright 2012
-							www.junanex.com, All Rights Reserved</div>
+												<div align="center" class="hui">王大锤快递&nbsp;&nbsp; Copyright 2014 All Rights Reserved</div>
+
 					</td>
 
 				</tr>

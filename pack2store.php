@@ -4,8 +4,7 @@ require_once('valid_user.php');
 
 
 try{
-	session_start();
-	$pk_areaid=$_POST["pk_areaid"];
+	//$pk_areaid=$_POST["pk_areaid"];
 	$pk_express=$_POST["pk_express"];
 	$pk_expressno=$_POST["pk_expressno"];
 	$pk_weight=$_POST["pk_weight"];
@@ -26,11 +25,10 @@ try{
 	if($result->num_rows>0){
 		do_html_header("已经存在的美国包裹号!");
 		echo "<script type=\"text/javascript\"> alert(\"已经存在的美国包裹号!\")</script>";
-		display_member_init();
 	}
 
 	else{
-		$query="INSERT into package (cid,storage,delivermethod,tracknumber,note,pack_weight,item1_name,item1_num,item1_price,item2_name,item2_num,item2_price,item3_name,item3_num,item3_price,item4_name,item4_num,item4_price,item5_name,item5_num,item5_price) values ('".$_SESSION['cid']."','".$_POST['pk_areaid']."','".$_POST['pk_express']."','".$_POST["pk_expressno"]."','".$_POST["pk_remark_user"]."','".$_POST["pk_weight"]."','".$_POST['item1_name']."','".$_POST['item1_num']."','".$_POST['item1_price']."','".$_POST['item2_name']."','".$_POST['item2_num']."','".$_POST['item2_price']."','".$_POST['item3_name']."','".$_POST['item3_num']."','".$_POST['item3_price']."','".$_POST['item4_name']."','".$_POST['item4_num']."','".$_POST['item4_price']."','".$_POST['item5_name']."','".$_POST['item5_num']."','".$_POST['item5_price']."')";
+		$query="INSERT into package (cid,delivermethod,tracknumber,note,pack_weight,item1_name,item1_num,item1_price,item2_name,item2_num,item2_price,item3_name,item3_num,item3_price,item4_name,item4_num,item4_price,item5_name,item5_num,item5_price) values ('".$_SESSION['cid']."','".$_POST['pk_express']."','".$_POST["pk_expressno"]."','".$_POST["pk_remark_user"]."','".$_POST["pk_weight"]."','".$_POST['item1_name']."','".$_POST['item1_num']."','".$_POST['item1_price']."','".$_POST['item2_name']."','".$_POST['item2_num']."','".$_POST['item2_price']."','".$_POST['item3_name']."','".$_POST['item3_num']."','".$_POST['item3_price']."','".$_POST['item4_name']."','".$_POST['item4_num']."','".$_POST['item4_price']."','".$_POST['item5_name']."','".$_POST['item5_num']."','".$_POST['item5_price']."')";
 		$result=mysqli_query($connect,$query);
 
 		if(!$result){
@@ -41,7 +39,6 @@ try{
 		else{
 			do_html_header("包裹已被录入，正在处理中。。。");
 			echo "<script type=\"text/javascript\"> alert(\"包裹已被录入，正在处理中。。。\")</script>";
-			display_member_init();
 		}
 	}
 
